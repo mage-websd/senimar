@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="RKApp">
+<head>
+	<title>Angular</title>
+</head>
+<body ng-controller="ProjectController">
+
+<p>
+	<input ng-change="funcChange(1);" ng-model="varName" />
+</p>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+(function(angular) {
+	angular.module('RKApp', []).controller('ProjectController', function($scope) {
+		$scope.name = 'Giang soda';
+
+		$scope.funcChange = function(a) {
+			alert(a);
+		};
+	});
+})(angular);
+</script>
+</body>
+</html>

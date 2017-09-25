@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Angular</title>
+</head>
+<body>
+
+<form>
+	<input type="text" name="name" />
+</form>
+<p>Text form: <span id="change-name"></span></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+<script>
+(function($) {
+	$('input[name="name"]').keypress(function() {
+		$('#change-name').text($(this).val());
+	});
+})(jQuery);
+</script>
+</body>
+</html>

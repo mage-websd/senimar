@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="RKApp">
+<head>
+	<title>Angular</title>
+</head>
+<body ng-controller="ProjectController">
+
+<p>
+	<button ng-click="funcClick1($event);">1</button>
+</p>
+
+<p>
+	<button ng-dblclick="funcDBClick1($event);">dblclick</button>
+</p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+(function(angular) {
+	angular.module('RKApp', []).controller('ProjectController', function($scope) {
+		$scope.name = 'Giang soda';
+
+		$scope.funcClick1 = function($event) {
+			alert(1);
+			console.log($event);
+			console.log($event.target);
+			console.log(angular.element($event.target));
+		};
+
+		$scope.funcDBClick1 = function($event) {
+			alert('dbclick');
+			console.log($event);
+			console.log($event.target);
+			console.log(angular.element($event.target));
+		};
+	});
+})(angular);
+</script>
+</body>
+</html>

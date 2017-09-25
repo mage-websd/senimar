@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="RKApp">
+<head>
+	<title>Angular</title>
+</head>
+<body ng-controller="ProjectController">
+
+<div style="margin-bottom: 20px;">
+	<select ng-options="item for item in data1" ng-model="selectedValue1"></select>
+</div>
+
+<div style="margin-bottom: 20px;">
+	<select ng-options="item.id as item.name for item in data2" ng-model="selectedValue2"></select>
+</div>
+
+<div style="margin-bottom: 20px;">
+	<select ng-model="selectedValue2">
+		<option ng-repeat="(key, label) in data3" ng-value="key" ng-bind="label"></option>
+	</select>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+(function(angular) {
+	angular.module('RKApp', []).controller('ProjectController', function($scope) {
+		$scope.data1 = [2,3,4,5,6,7,8,9];
+		$scope.data2 = [
+			{
+				id: 3,
+				name: 'An'
+			},
+			{
+				id: 4,
+				name: 'Binh'
+			},
+			{
+				id: 5,
+				name: 'Cuong'
+			},
+		];
+
+		$scope.data3 = {
+			1: 'Giang',
+			'test': 'xong',
+			'demo': 'ok'
+		};
+	});
+})(angular);
+</script>
+</body>
+</html>

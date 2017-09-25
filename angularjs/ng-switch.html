@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="RKApp">
+<head>
+	<title>Angular</title>
+</head>
+<body ng-controller="ProjectController">
+
+<form>
+	<input type="text" ng-model="varName" />
+</form>
+
+<div ng-switch="varName">
+	<p ng-switch-when="1" style="color: blue">case 1</p>
+	<p ng-switch-when="2" style="color: red">case 2</p>
+	<p ng-switch-when="3" style="color: black">case 3</p>
+	<p ng-switch-default style="color: #ff00ba">case default</p>
+</div>
+
+<div ng-show="varName">121121</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+(function(angular) {
+	angular.module('RKApp', []).controller('ProjectController', function($scope) {
+		$scope.name = 'Giang soda';
+	});
+})(angular);
+</script>
+</body>
+</html>

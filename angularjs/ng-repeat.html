@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="RKApp">
+<head>
+	<title>Angular</title>
+</head>
+<body ng-controller="ProjectController">
+
+<div ng-repeat="item in data1">
+	<p ng-bind="item"></p>
+</div>
+
+<div ng-repeat="(key, value) in data2">
+	<p ng-bind="key + ' -- ' + value"></p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+(function(angular) {
+	angular.module('RKApp', []).controller('ProjectController', function($scope) {
+		$scope.data1 = [2,3,4,5,6,7,8,9];
+		$scope.data2 = {
+			1: 'Giang',
+			'test': 'xong',
+			'demo': 'ok'
+		};
+	});
+})(angular);
+</script>
+</body>
+</html>

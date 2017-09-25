@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="RKApp">
+<head>
+	<title>Angular</title>
+</head>
+<body ng-controller="ProjectController">
+
+<form>
+	<input type="checkbox" ng-model="varName" />
+</form>
+<div ng-if="varName">
+	<p>Text sample</p>
+	<p style="color: red">Text sample</p>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+(function(angular) {
+	angular.module('RKApp', []).controller('ProjectController', function($scope) {
+		$scope.name = 'Giang soda';
+	});
+})(angular);
+</script>
+</body>
+</html>
