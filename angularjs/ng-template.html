@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="RKApp">
+<head>
+	<title>Angular</title>
+</head>
+<body ng-controller="ProjectController">
+
+<div ng-include="includeTest"></div>
+
+<div ng-include src="'http://127.0.0.1/www/senimar/assets/html/template-script.html'" onload="loadedT = true"></div>
+
+<!-- <script type="text/ng-template" id="tem1.html">
+	<table border="1">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+		</tr>
+	</table>
+</script> -->
+
+<!-- <script src="'assets/html/template-script.html'"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script>
+(function(angular) {
+	angular.module('RKApp', []).controller('ProjectController', function($scope) {
+		$scope.loadedT = false;
+		$scope.$watch('loadedT', function() {
+			if ($scope.loadedT) {
+				$scope.includeTest = 'tem2.html';
+			}
+		});
+	});
+})(angular);
+</script>
+</body>
+</html>
